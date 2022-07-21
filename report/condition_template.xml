@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="template_id">
+        
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h3>
+                            <span>Report </span>
+                           
+                      
+                        
+                        </h3>
+                        
+                        <table>
+                            <tr>
+                                <td> Date From </td>
+                                <td> : </td>
+                                
+                                <td> <t t-esc="form['from_date']"/> </td>
+                            </tr>
+                            <tr>
+                                <td> Date To: </td>
+                                <td> : </td>
+                                <td> <t t-esc="form['to_date']"/> </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table class='table' >
+                        <thead>
+                            <tr>    
+                                <th> Code </th>
+                                <th> Vehicle Type </th>
+                                <th> Parking Lot </th>
+                                <th> Price </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="tickets" t-as="ticket">
+                                <td>
+                                    <span t-esc="ticket['name']"/>
+                                </td>
+                                <td>
+                                    <span t-esc="ticket['vehicle_id'][1]"/>
+                                </td>
+                                <td>
+                                    <span t-esc="ticket['lot_id'][1]"/>
+                                </td>
+                                <td> 
+                                    <span t-esc="ticket['price']"/>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                        <tr>
+                            <td>Total Price</td>
+                            <td> </td>
+                            <td t-esc="total_price" />
+                        </tr>
+                        <tr> 
+                            <td>Total Ride</td>
+                            <td> </td>
+                            <td t-esc="total_ticket" />
+                        </tr>
+                    </table>
+                  
+                    
+                </t>
+            </t>
+        
+    </template>
+
+</odoo>
+ 

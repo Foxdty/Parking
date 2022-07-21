@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    
+    <record id="ticket_view_tree" model="ir.ui.view">
+        <field name="name">ticket.view.tree</field>
+        <field name="model">parking.ticket</field>
+        <field name="arch" type="xml">
+            <tree string="" decoration-muted="state == 'out'">
+                <field name="name" />
+                <field name="image" optional='hide'/>
+                <field name="vehicle_id" />
+                <field name="time_in" optional='hide'/>
+                <field name="time_out" optional='hide' />
+                <field name="lot_id" />
+                <field name="state"  />
+                <field name="price" />
+
+
+            </tree>
+        </field>
+    </record>
+    <record id="ticket_view_form" model="ir.ui.view">
+        <field name="name">ticket.view.form</field>
+        <field name="model">parking.ticket</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <header>
+                    <button string="Timeline" name="Timeline" type="object" class='btn-primary' />
+                    
+                    
+                </header>
+                <sheet>
+                <h2>
+                    <field name="name" />
+                </h2>
+                <field name="image" widget='image' class='oe_avatar' />
+                    <group >
+                        <group>
+                           
+                            <field name="vehicle_id" /> 
+                            <field name="lot_id"  />
+                            <field name="price" />
+                            <field name="user_id" />
+                            
+                            
+                      
+                            
+                            
+                        </group>
+                        <group> 
+                        <field name="remaining_parking_spaces" />
+                        <field name="time_in" />
+                        <field name="time_out" />
+                        <field name="total_time" />
+
+
+                        </group>
+
+                    </group>
+                  
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="sequence_self_service" model="ir.sequence">
+        <field name="name">Self Service</field>
+        <field name="code">self.service</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">TK</field>
+        <field name="padding">3</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+    <record id="ticket_view_search" model="ir.ui.view">
+        <field name="name">ticket_view_search</field>
+        <field name="model">parking.ticket</field>
+        <field name="arch" type="xml">
+            <search string="Tests">
+                <separator/>
+                <filter string="Unpaid" name="sate_filter_unpaid" domain="[('state','=','in')]"/>
+                <filter string="Paid" name="state" domain="[('state','=','out')]"/>
+                <separator />
+                <!-- <field string='Available' name="availability_date" domain="[('availability_date','=','06/26/2022 07:00:00')]"/> -->
+                
+            </search>
+        </field>
+    </record>
+    
+    <record id ="ticket_action" model='ir.actions.act_window'>
+        <field name='name'>Ticket</field>
+        <field name='res_model'>parking.ticket</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+</odoo>

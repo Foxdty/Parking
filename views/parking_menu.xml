@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="estate_menu_root" name="Parking">
+        <menuitem id="test_fist_level_menu" name="Parking" sequence="10">
+            <menuitem id="test_model_menu_action" action="lot_action" />
+        </menuitem>
+        <menuitem id="option_menu" name="Options" sequence="15">
+            <menuitem id="Vehicle" action="vehicle_action" name="Vehicle" /> 
+            <menuitem id="Ticket" action="ticket_action" name="Ticket" />
+            <menuitem id="pricelist" name="PriceList" action='pricelist_action'/>
+        </menuitem>
+        <menuitem id="reprot_menu" name="Reprot" sequence="25">
+            <menuitem id="report_menu_pdf" action='reprot_action'/>
+            <menuitem id="report_menu_xlsx" action='xlsx_reprot_action'/>
+        </menuitem>
+        <menuitem id="setting" name="Setting" sequence="35">
+            <menuitem id="resource_action" action='resource_action'/>
+        </menuitem>
+
+    </menuitem>
+
+
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_condition_report" model="ir.actions.report">
+        <field name="name">Reprot</field>
+        <field name="model">condition.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">parking.template_id</field>
+        
+        <field name="report_file">parking.template_id</field>
+        <field name="binding_model_id" ref='model_condition_report'/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_condition_report_xlsx" model="ir.actions.report">
+        <field name="name">Reprot xlsx</field>
+        <field name="model">condition.report</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">parking.template_id_xlsx</field>
+        
+        <field name="report_file">parking.template_id_xlsx</field>
+        <field name="binding_model_id" ref='model_parking_lot'/>
+        <field name="binding_type">report</field>
+    </record>
+    
+    
+
+
+
+
+</odoo>

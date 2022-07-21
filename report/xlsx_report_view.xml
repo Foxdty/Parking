@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    
+    <record id="report_xlsx_view_form" model="ir.ui.view">
+        <field name="name">Report PDF</field>
+        <field name="model">condition.report</field>
+        <field name="arch" type="xml">
+            <form string="Print PDF">
+                
+                    <group>
+                        <gorup>
+                            <table>
+                                <tr>
+                                    <td> Date From : </td>
+                                    <td> <field name="from_date"/>  </td>
+                                </tr>
+                                <tr>
+                                    <td>Vehicle Type : </td>
+                                    <td> <field name="vehicle_id"/>  </td>
+                                </tr>
+
+                            </table>
+                        </gorup>
+                        <gorup> 
+                        
+                                <table>
+                                <tr>
+                                    <td> Date To : </td>
+                                    <td> <field name="to_date"/>  </td>
+                                </tr>
+                                <tr>
+                                    <td>Parking Lot : </td>
+                                    <td> <field name="lot_id"/>  </td>
+                                </tr>
+                            </table>
+                        
+                          
+                        </gorup>
+                    </group>
+                
+                <footer>
+                    <button string='Reprot Excel' name='action_print_excel_report' type='object' class='btn-primary' /> 
+
+                    <button string='Cancle'  class='btn-secondary' special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="xlsx_reprot_action" model="ir.actions.act_window">
+        <field name="name">Reprot Excel</field>
+        <field name="res_model">condition.report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref='report_xlsx_view_form' />
+        <field name="target">new</field>
+    </record>
+
+
+</odoo>

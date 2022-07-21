@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+parking.access_parking_lot,access_parking_lot,parking.model_parking_lot,base.group_user,1,1,1,1
+parking.access_parking_vehicle,access_parking_vehicle,parking.model_parking_vehicle,base.group_user,1,0,0,0
+parking.access_parking_ticket,access_parking_ticket,parking.model_parking_ticket,base.group_user,1,0,0,0
+parking.access_parking_pricelist,access_parking_pricelist,parking.model_parking_pricelist,base.group_user,1,0,0,0
+parking.access_condition_report,access_condition_report,parking.model_condition_report,base.group_user,1,0,0,0
+parking.access_parking_pricelist_item,access_parking_pricelist_item,parking.model_parking_pricelist_item,base.group_user,1,0,0,0

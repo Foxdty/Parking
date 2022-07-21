@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="lot_view_tree" model="ir.ui.view">
+        <field name="name">lot.view.tree</field>
+        <field name="model">parking.lot</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name" />
+                <field name="vehicle_id" />
+                <field name="limit_vehicle" />
+                <field name="working_hours" />
+            </tree>
+        </field>
+    </record>
+    <record id="lot_view_form" model="ir.ui.view">
+        <field name="name">lot.view.form</field>
+        <field name="model">parking.lot</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" />
+                            <field name="vehicle_id" />
+                            <field name="pricelist_id" />
+                            <field name="working_hours" />
+                        </group>
+
+                        <group> 
+                            <field name="limit_vehicle" />
+                            <field name="time_begin" />
+                            <field name="time_end" />
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="lot_view_calendar" model="ir.ui.view">
+        <field name="name">lot.view.calendar</field>
+        <field name="model">parking.lot</field>
+        <field name="arch" type="xml">
+            <calendar string="" date_start="time_begin" date_stop='time_end' color='name'>
+                <field name="name" />
+            </calendar>
+        </field>
+    </record>
+
+    <record id="lot_view_kanban" model="ir.ui.view">
+        <field name="name">lot.view.kanban</field>
+        <field name="model">parking.lot</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <!-- <field name="ticket_id.time_out" /> -->
+
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <ul>
+                                <li>
+                                    Name: <field name="name" />
+                                </li>
+                                <li>
+                                    Space remain: <field name="limit_vehicle" />
+                                </li>
+       
+
+                            </ul>
+                                <div class="d-flex justify-content-end" name="button_box">
+                                    <button name="active" type="object" class="oe_stat_button" >
+                                        
+                                        
+                                        <span >Show Ticket</span>
+                                        
+                                    </button>
+                                </div>      
+                        </div>                
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+    <record id ="lot_action" model='ir.actions.act_window'>
+        <field name='name'>Parking Lot</field>
+        <field name='res_model'>parking.lot</field>
+        <field name='view_mode'>tree,form,calendar,kanban</field>
+    </record>
+</odoo>
