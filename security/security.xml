@@ -14,19 +14,5 @@
         <field name="category_id" ref='module_category_parking' /> 
         <field name="implied_ids" eval="[(4, ref('parking_group_user'))]"/>
     </record>
-    <!-- <record id="es_rule" model="ir.rule">
-        <field name="name">Rule Estate</field>
-        <field name="model_id" ref='model_estate_property' />
-        <field name="domain_force">[ '|', ('user_id', '=', user.id),
-             ('user_id', '=', False)]</field>
-        <field name="groups" eval="[(4, ref('estate_group_user'))]" />
-    </record>
-        <record id="es_manage_rule" model="ir.rule">
-        <field name="name">Rule manage Estate</field>
-        <field name="model_id" ref='model_estate_property' />
-        <field name="domain_force">[]</field>
-        <field name="groups" eval="[(4, ref('estate_group_manager'))]" />
-    </record>
-     -->
 
 </odoo>
