@@ -29,10 +29,12 @@
         'views/parking_pricelist_view.xml',
         'views/res_user_view.xml',
         'views/parking_lot_working_hours.xml',
+        'views/parking_limit.xml',
         'report/condition_report.xml',
         'report/condition_template.xml',
         'report/report_view.xml',
         'report/xlsx_report_view.xml',
+        
         
         
        

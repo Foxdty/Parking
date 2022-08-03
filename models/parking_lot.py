@@ -11,12 +11,11 @@ class parking_lot(models.Model):
 
     
     name = fields.Char(string='Name')
-    vehicle_id = fields.Many2one(comodel_name="parking.vehicle")
-    limit_vehicle=fields.Integer(string='Limit Vehicle')
+    vehicle_id = fields.Many2many(comodel_name="parking.vehicle")
+    
     pricelist_id = fields.Many2one(string='Pricelist',comodel_name='parking.pricelist') 
-    time_begin = fields.Datetime(string='Start time')
-    time_end = fields.Datetime(string='End time')
-    ticket_id = fields.Many2one(comodel_name='parking.ticket')
+
+    ticket_id = fields.One2many(comodel_name='parking.ticket',inverse_name='lot_id')
     working_hours = fields.Many2one(comodel_name='resource.calendar',string='Working hours',required=True)
 
 

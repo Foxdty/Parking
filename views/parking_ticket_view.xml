@@ -38,8 +38,9 @@
                     <group >
                         <group>
                            
-                            <field name="vehicle_id" /> 
+                            
                             <field name="lot_id"  />
+                            <field name="vehicle_id" />
                             <field name="price" />
                             <field name="user_id" />
                             
@@ -49,7 +50,7 @@
                             
                         </group>
                         <group> 
-                        <field name="remaining_parking_spaces" />
+                        
                         <field name="time_in" />
                         <field name="time_out" />
                         <field name="total_time" />

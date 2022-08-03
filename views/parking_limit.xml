@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="parking_limit_tree" model="ir.ui.view">
+        <field name="name">parking.limit.tree</field>
+        <field name="model">parking.limit</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="lot_id" />
+                <field name="vehicle_id" />
+                <field name="limit" />
+            </tree>
+        </field>
+    </record>
+    <record id="parking_limit_form" model="ir.ui.view">
+        <field name="name">parking.limit.form</field>
+        <field name="model">parking.limit</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="lot_id" />
+                        <field name="vehicle_id" />
+                        <field name="limit" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_parking_limit" model="ir.actions.act_window">
+        <field name="name">Vehicle Limit</field>
+        <field name="res_model">parking.limit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

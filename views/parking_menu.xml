@@ -16,6 +16,7 @@
         </menuitem>
         <menuitem id="setting" name="Setting" sequence="35">
             <menuitem id="resource_action" action='resource_action'/>
+            <menuitem id="menu_limit" action='action_parking_limit'/>
         </menuitem>
 
     </menuitem>
