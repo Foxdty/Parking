@@ -15,9 +15,9 @@ class parking_lot(models.Model):
     
     pricelist_id = fields.Many2one(string='Pricelist',comodel_name='parking.pricelist') 
 
-    ticket_id = fields.One2many(comodel_name='parking.ticket',inverse_name='lot_id')
+    ticket_ids = fields.One2many(comodel_name='parking.ticket',inverse_name='lot_id')
     working_hours = fields.Many2one(comodel_name='resource.calendar',string='Working hours',required=True)
-
+    ticket_count = fields.Integer(compute='_ticket_count')
 
     _sql_constraints=[('unique_name','unique(name)','The name is unique')]
 
@@ -32,6 +32,27 @@ class parking_lot(models.Model):
             'context': {'search_default_sate_filter_unpaid':1}
         }
     
-
-        
+    @api.depends('ticket_ids')
+    def _ticket_count(self):
+        for record in self:
+            tickets = self.env['parking.ticket'].search_count([('lot_id','=',record.id)])
+            record.ticket_count = tickets
+    def button_ticket(self):
+        if len(self.vehicle_id) == 1:
+            return{
+            'name': ('Ticket'),
+            'res_model': 'parking.ticket',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'list,form',
+            'domain': [('lot_id','=',self.id)],
+            'context': {'default_lot_id':self.id, 'default_vehicle_id' : self.vehicle_id.id}
+            } 
+        return{
+            'name': ('Ticket'),
+            'res_model': 'parking.ticket',
+            'type': 'ir.actions.act_window',
+            'view_mode': 'list,form',
+            'domain': [('lot_id','=',self.id)],
+            'context': {'default_lot_id':self.id}
+        }
 

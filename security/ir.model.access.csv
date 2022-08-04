@@ -5,3 +5,4 @@ parking.access_parking_ticket,access_parking_ticket,parking.model_parking_ticket
 parking.access_parking_pricelist,access_parking_pricelist,parking.model_parking_pricelist,base.group_user,1,0,0,0
 parking.access_condition_report,access_condition_report,parking.model_condition_report,base.group_user,1,0,0,0
 parking.access_parking_pricelist_item,access_parking_pricelist_item,parking.model_parking_pricelist_item,base.group_user,1,0,0,0
+parking.access_parking_limit,access_parking_limit,parking.model_parking_limit,base.group_user,1,0,0,0

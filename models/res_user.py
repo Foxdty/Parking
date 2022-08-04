@@ -6,6 +6,7 @@ class User(models.Model):
     _description='res'
 
     ticket_ids = fields.One2many(comodel_name='parking.ticket',inverse_name='user_id')
+    lot_id = fields.Many2one('parking.lot')
     
 
    

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-
     <record id="lot_view_tree" model="ir.ui.view">
         <field name="name">lot.view.tree</field>
         <field name="model">parking.lot</field>
@@ -20,6 +19,15 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
+          
+                    <div class="oe_button_box" name="button_box">
+                        <button name="button_ticket" type="object" class="oe_stat_button" icon="fa-ticket">
+                            <div class="o_field_widget o_stat_info">
+                                <field name="ticket_count" />
+                                <span class="o_stat_text">Tickets</span>
+                            </div>
+                        </button>
+                    </div>
                     <group>
                         <group>
                             <field name="name" />
@@ -31,8 +39,10 @@
                         <group> 
                      
                             <field name="working_hours" />
+                           
                         </group>
                     </group>
+
 
                 </sheet>
             </form>

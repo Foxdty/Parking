@@ -120,7 +120,7 @@ class parking_ticket(models.Model):
             for x in lot.vehicle_id:
                 domain.append(x.id)
             return {'domain': {'vehicle_id': [('id','in',domain)]}}
-    
+
 
 
 
